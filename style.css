@@ -1,0 +1,31 @@
+html {
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+}
+
+.sidebar {
+	grid-row: 1 / span 5;
+	grid-column: 1;
+}
+
+.header {
+	grid-row: 1 / span 4;
+	grid-column: 2 / span 3;
+}
+
+.main {
+	grid-row: 2 / span 4;
+	grid-column: 2 / span 3;
+}

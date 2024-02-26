@@ -2,14 +2,17 @@
 	box-sizing: border-box;
 
 	/* global colors  */
-	--background: #121212;
+	--main: #121212;
 	--accent: #7c7c7c;
-	--background-alt: #3f3f3f;
-	--foreground: #cfcfcf;
+	--main-alt: #3f3f3f;
+	--alt: #cfcfcf;
+
+	/* extra vars */
+	--semi-bold: 500;
 
 	/* friendly global style definitions :) */
 	font-family: Roboto, sans-serif;
-	color: var(--foreground);
+	color: var(--alt);
 	font-size: 62.5%;
 }
 
@@ -17,19 +20,22 @@
 	box-sizing: inherit;
 	padding: 0;
 	margin: 0;
+	border: none;
 }
 
 .container {
 	height: 100svh;
 	display: grid;
 	grid-template-columns: 1fr 4fr;
+	font-size: 1.6rem;
 }
 
 .sidebar {
 	display: grid;
 	grid-template-rows: auto auto auto 1fr;
-	background: var(--background-alt);
+	background: var(--main-alt);
 	height: 100%;
+	z-index: 2;
 }
 
 .sidebar > div {
@@ -40,7 +46,8 @@
 	display: grid;
 	gap: 10px;
 	grid-template-columns: 40px 1fr;
-	font-size: 1.8rem;
+	font-size: 2rem;
+	font-weight: var(--semi-bold);
 	align-items: center;
 }
 
@@ -54,7 +61,6 @@
 	display: grid;
 	align-items: center;
 	gap: 20px;
-	font-size: 1.6rem;
 }
 
 .sidebar .nav-options > div,
@@ -70,4 +76,68 @@
 
 .header {
 	background: var(--accent);
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-rows: 2fr 3fr;
+	row-gap: 25px;
+	column-gap: 20px;
+	padding: 25px 40px;
+	z-index: 1;
+	box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.8);
+}
+
+.header > div:first-child {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	gap: 10px;
+}
+
+.header > div:first-child input {
+	height: 30px;
+	border-radius: 20px;
+}
+
+.header > div:nth-child(2) {
+	display: grid;
+	grid-template-columns: 1fr auto auto auto;
+	column-gap: 20px;
+	justify-items: right;
+	align-items: center;
+}
+
+.header > div:nth-child(3) {
+	display: grid;
+	grid-template-columns: auto auto 1fr;
+	grid-template-rows: auto 1fr;
+}
+
+.header > div:nth-child(3) img {
+	margin: auto 10px;
+	height: 50px;
+	grid-row: 1 / span 2;
+}
+
+.header > div:nth-child(3) p:first-of-type {
+	font-size: 1.4rem;
+}
+
+.header > div:nth-child(3) p:nth-of-type(2) {
+	grid-row-start: 2;
+	font-size: 2rem;
+	font-weight: var(--semi-bold);
+}
+
+.header > div:last-child {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 20px;
+	align-items: end;
+}
+
+.header > div:last-child button {
+	height: 75%;
+	border-radius: 20px;
+	padding: 20px auto;
+	font-weight: bold;
 }

@@ -96,6 +96,7 @@
 .header > div:first-child input {
 	height: 30px;
 	border-radius: 20px;
+	padding-left: 20px;
 }
 
 .header > div:nth-child(2) {
@@ -140,6 +141,7 @@
 	border-radius: 20px;
 	padding: 20px auto;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .main {
@@ -214,6 +216,10 @@
 	border-radius: 8px;
 	display: grid;
 	row-gap: 20px;
+}
+
+.aside .announcement p:first-child {
+	font-weight: bold;
 }
 
 hr {
